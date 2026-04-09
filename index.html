@@ -1,29 +1,157 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pós-Graduação em Gestão Financeira de Partidos e Campanhas. A única focada em segurança técnica e conformidade legal no mercado eleitoral brasileiro. 100% Online, reconhecida pelo MEC.">
-    <meta name="keywords" content="pós-graduação, gestão financeira, mercado eleitoral, partidos políticos, campanhas eleitorais, justiça eleitoral, Denise Schlickmann">
-    
+    <meta name="description"
+        content="Pós-Graduação em Gestão Financeira de Partidos e Campanhas. A única focada em segurança técnica e conformidade legal no mercado eleitoral brasileiro. 100% Online, reconhecida pelo MEC.">
+    <meta name="keywords"
+        content="pós-graduação, gestão financeira, mercado eleitoral, partidos políticos, campanhas eleitorais, justiça eleitoral, Denise Schlickmann">
+
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Pós-Graduação em Gestão Financeira Eleitoral | Instituto Saber Digital">
     <meta property="og:description" content="Domine a engrenagem financeira das eleições com quem entende do assunto.">
     <meta property="og:image" content="./imagens/1 - HERO.jpeg">
-    
-  <script type="module" crossorigin src="./assets/index-DwHIy18-.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BW1PElmN.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#080C12',
+                        'brand-gold': '#cea162',
+                        'brand-gold-dark': '#b08a54',
+                        'brand-card': '#0B111A',
+                        'brand-accent': '#f43f5e',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer base {
+            *, ::before, ::after {
+                box-sizing: border-box;
+            }
+            
+            html, body {
+                @apply bg-[#080C12] text-white font-inter overflow-x-hidden w-full m-0 p-0;
+                background-image: radial-gradient(circle at 50% -10%, #0B111A 0%, #080C12 100%);
+                min-width: 320px;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-montserrat tracking-tight;
+            }
+        }
+
+        @layer components {
+            .btn-primary {
+                @apply bg-brand-gold text-brand-dark font-extrabold py-5 px-6 md:px-14 rounded-lg transition-all duration-300 hover:bg-white hover:scale-[1.02] active:scale-95 text-center inline-flex items-center justify-center gap-2 shadow-xl shadow-brand-gold/5 max-w-full;
+            }
+            .btn-secondary {
+                @apply bg-brand-gold text-brand-dark font-extrabold py-3 px-6 md:px-8 rounded-lg transition-all duration-300 hover:bg-white hover:scale-[1.05] text-xs md:text-sm inline-flex items-center justify-center max-w-full;
+            }
+            .section-container {
+                @apply max-w-7xl mx-auto px-6 py-16 md:py-40;
+            }
+            .card {
+                @apply bg-[#0B111A]/60 border border-white/5 backdrop-blur-md rounded-2xl p-6 md:p-10 transition-all duration-500 hover:border-brand-gold/30 hover:-translate-y-1;
+            }
+            .tag {
+                @apply bg-[#0B111A] border border-white/10 px-8 py-4 rounded-xl text-brand-gold font-bold text-sm transition-all hover:border-brand-gold/40 hover:scale-105;
+            }
+        }
+
+      /* Animations Hub */
+      .reveal-element {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform, opacity;
+      }
+
+      .reveal-element.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        @apply bg-brand-dark;
+      }
+      ::-webkit-scrollbar-thumb {
+        @apply bg-brand-gold/50 rounded-full hover:bg-brand-gold;
+      }
+
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Glow Animation */
+      @keyframes soft-glow {
+        0%, 100% { 
+          box-shadow: 0 0 5px rgba(206, 161, 98, 0.2);
+          background-color: rgba(206, 161, 98, 0.1);
+        }
+        50% { 
+          box-shadow: 0 0 20px rgba(206, 161, 98, 0.4);
+          background-color: rgba(206, 161, 98, 0.2);
+        }
+      }
+      .animate-glow {
+        animation: soft-glow 3s ease-in-out infinite;
+      }
+
+      /* Testimonials Carousel */
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .carousel-track {
+        display: flex;
+        width: max-content;
+        animation: scroll 40s linear infinite;
+      }
+      .carousel-track:hover {
+        animation-play-state: paused;
+      }
+    </style>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body class="bg-brand-dark text-white font-inter">
 
     <!-- Header -->
-    <header class="fixed top-0 w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+    <header
+        class="fixed top-0 w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-white/5 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20 md:h-24">
             <div class="flex items-center">
-                <img src="./assets/Logo%20instituto%20saber%20digital-DuDdyVCK.jpeg" alt="Logo Instituto Saber Digital" class="h-10 md:h-12 rounded shadow-sm grayscale hover:grayscale-0 transition-all">
+                <img src="./imagens/Logo instituto saber digital.jpeg" alt="Logo Instituto Saber Digital"
+                    class="h-10 md:h-12 rounded shadow-sm grayscale hover:grayscale-0 transition-all">
             </div>
-            
+
             <div class="hidden md:flex items-center gap-10">
                 <nav class="flex gap-8 text-sm font-bold tracking-wide">
                     <a href="#programa" class="hover:text-brand-gold transition-colors">Programa</a>
@@ -31,7 +159,8 @@
                     <a href="#faq" class="hover:text-brand-gold transition-colors">FAQ</a>
                 </nav>
 
-                <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank" class="btn-secondary">Matricule-se agora!</a>
+                <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank"
+                    class="btn-secondary">Matricule-se agora!</a>
             </div>
 
             <!-- Mobile toggle placeholder -->
@@ -42,22 +171,28 @@
     </header>
 
     <!-- Main Content -->
-    <main class="pt-24 overflow-x-hidden">
-        
+    <main class="pt-32 md:pt-40 overflow-x-hidden">
+
         <!-- Hero Section -->
-        <section class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+        <section
+            class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-6 overflow-hidden">
             <!-- Background effects -->
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-gold/5 blur-[120px] rounded-full animate-pulse"></div>
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-gold/5 blur-[120px] rounded-full animate-pulse">
+            </div>
             <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-gold/10 blur-[150px] rounded-full"></div>
-            
-            <div class="relative z-10 max-w-5xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-5 duration-1000">
-                <div class="inline-flex items-center gap-3 border border-brand-gold/20 rounded-full px-6 py-2.5 text-xs font-bold text-brand-gold bg-brand-gold/5 backdrop-blur-sm">
-                    <span class="w-1.5 h-1.5 bg-yellow-400 rounded-full shadow-[0_0_8px_rgba(250,204,21,0.6)]"></span>
-                    Vagas limitadas para a Turma de Lançamento 2026 — Início: 28/04
+
+            <div
+                class="relative z-10 max-w-5xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-5 duration-1000">
+                <div
+                    class="inline-flex items-center gap-3 border border-brand-gold/20 rounded-full px-4 md:px-6 py-2 md:py-2.5 text-[10px] md:text-xs font-bold text-brand-gold bg-brand-gold/5 backdrop-blur-sm max-w-full text-center">
+                    <span
+                        class="shrink-0 w-1.5 h-1.5 bg-yellow-400 rounded-full shadow-[0_0_8px_rgba(250,204,21,0.6)]"></span>
+                    <span class="leading-relaxed">Vagas limitadas para a Turma de Lançamento 2026 — Início: 28/04</span>
                 </div>
 
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight">
-                    A única pós-graduação focada em <span class="text-brand-gold">gestão financeira</span> de partidos e campanhas.
+                <h1 class="text-3xl md:text-6xl lg:text-7xl font-extrabold leading-[1.2] md:leading-[1.1] tracking-tight px-2">
+                    A única pós-graduação focada em <span class="text-brand-gold">gestão financeira</span> de partidos e
+                    campanhas.
                 </h1>
 
                 <p class="text-lg md:text-xl text-white/70 max-w-3xl mx-auto font-medium">
@@ -80,8 +215,9 @@
                     </div>
                 </div>
 
-                <div class="pt-4 pb-12">
-                    <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank" class="btn-primary block sm:inline-block w-full sm:w-auto shadow-2xl shadow-brand-gold/20">
+                <div class="pt-8 pb-12">
+                    <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank"
+                        class="btn-primary shadow-2xl shadow-brand-gold/20">
                         Faça agora mesmo a sua matrícula
                     </a>
                 </div>
@@ -92,8 +228,9 @@
         <section class="bg-white/[0.02] border-y border-white/5 py-24">
             <div class="section-container text-center space-y-12">
                 <div class="space-y-4">
-                    <h2 class="text-3xl md:text-5xl font-bold">Esse curso foi feito para você atuar com segurança</h2>
-                    <p class="text-white/60 max-w-2xl mx-auto">Formação técnica sólida para quem já atua ou quer entrar no universo eleitoral e partidário.</p>
+                    <h2 class="text-2xl md:text-5xl font-bold">Esse curso foi feito para você atuar com segurança</h2>
+                    <p class="text-white/60 max-w-2xl mx-auto">Formação técnica sólida para quem já atua ou quer entrar
+                        no universo eleitoral e partidário.</p>
                 </div>
 
                 <div class="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
@@ -107,7 +244,8 @@
                 </div>
 
                 <div class="pt-8">
-                    <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank" class="btn-primary px-12 py-4">
+                    <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank"
+                        class="btn-primary px-12 py-4">
                         Quero me especializar agora!
                     </a>
                 </div>
@@ -119,46 +257,55 @@
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="space-y-8">
                     <div class="w-12 h-1 bg-brand-accent/50 rounded-full"></div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
-                        Um erro na prestação de contas pode custar seu <br>
+                    <h2 class="text-2xl md:text-4xl font-extrabold leading-tight">
+                        Um erro na prestação de contas pode custar seu <br class="hidden md:block">
                         <span class="text-brand-accent">mandato ou sua carreira.</span>
                     </h2>
-                    
+
                     <div class="space-y-6">
                         <div class="flex gap-4 items-start group">
-                            <div class="bg-brand-accent/10 p-2 rounded-lg group-hover:bg-brand-accent/20 transition-colors">
+                            <div
+                                class="bg-brand-accent/10 p-2 rounded-lg group-hover:bg-brand-accent/20 transition-colors">
                                 <i data-lucide="alert-triangle" class="w-5 h-5 text-brand-accent"></i>
                             </div>
-                            <p class="text-lg text-white/80">Insegurança para atuar sem o domínio das normas vigentes.</p>
+                            <p class="text-lg text-white/80">Insegurança para atuar sem o domínio das normas vigentes.
+                            </p>
                         </div>
                         <div class="flex gap-4 items-start group">
-                            <div class="bg-brand-accent/10 p-2 rounded-lg group-hover:bg-brand-accent/20 transition-colors">
+                            <div
+                                class="bg-brand-accent/10 p-2 rounded-lg group-hover:bg-brand-accent/20 transition-colors">
                                 <i data-lucide="ban" class="w-5 h-5 text-brand-accent"></i>
                             </div>
-                            <p class="text-lg text-white/80">Risco iminente de devolução integral de verbas públicas.</p>
+                            <p class="text-lg text-white/80">Risco iminente de devolução integral de verbas públicas.
+                            </p>
                         </div>
                         <div class="flex gap-4 items-start group">
-                            <div class="bg-brand-accent/10 p-2 rounded-lg group-hover:bg-brand-accent/20 transition-colors">
+                            <div
+                                class="bg-brand-accent/10 p-2 rounded-lg group-hover:bg-brand-accent/20 transition-colors">
                                 <i data-lucide="trending-down" class="w-5 h-5 text-brand-accent"></i>
                             </div>
-                            <p class="text-lg text-white/80">Dificuldade com recursos específicos para candidaturas de cotas.</p>
+                            <p class="text-lg text-white/80">Dificuldade com recursos específicos para candidaturas de
+                                cotas.</p>
                         </div>
                         <div class="flex gap-4 items-start group">
-                            <div class="bg-brand-accent/10 p-2 rounded-lg group-hover:bg-brand-accent/20 transition-colors">
+                            <div
+                                class="bg-brand-accent/10 p-2 rounded-lg group-hover:bg-brand-accent/20 transition-colors">
                                 <i data-lucide="x-circle" class="w-5 h-5 text-brand-accent"></i>
                             </div>
-                            <p class="text-lg text-white/80">Falta de domínio operacional dos sistemas da Justiça Eleitoral.</p>
+                            <p class="text-lg text-white/80">Falta de domínio operacional dos sistemas da Justiça
+                                Eleitoral.</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- This could be an image or a visual card -->
                 <div class="relative hidden md:block">
                     <div class="absolute -inset-4 bg-brand-accent/5 blur-3xl opacity-50 rounded-full"></div>
                     <div class="relative card border-brand-accent/20 p-12 space-y-6">
                         <i data-lucide="shield-alert" class="w-12 h-12 text-brand-accent mb-4"></i>
                         <h3 class="text-2xl font-bold">Conformidade é Autonomia</h3>
-                        <p class="text-white/60 leading-relaxed">Não deixe que a burocracia paralise sua atuação. Torne-se um especialista na gestão que sustenta a democracia.</p>
+                        <p class="text-white/60 leading-relaxed">Não deixe que a burocracia paralise sua atuação.
+                            Torne-se um especialista na gestão que sustenta a democracia.</p>
                     </div>
                 </div>
             </div>
@@ -168,25 +315,32 @@
         <section id="diferenciais" class="py-24 bg-brand-gold/[0.02]">
             <div class="section-container space-y-16">
                 <div class="max-w-3xl space-y-4">
-                     <div class="w-12 h-1 bg-brand-gold rounded-full mb-6"></div>
-                     <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
-                        Não é Direito Eleitoral. <br>
-                        É <span class="text-brand-gold">gestão financeira</span> com <span class="text-brand-white">segurança técnica.</span>
+                    <div class="w-12 h-1 bg-brand-gold rounded-full mb-6"></div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">
+                        Não é Direito Eleitoral. <br class="hidden md:block">
+                        É <span class="text-brand-gold">gestão financeira</span> com <span
+                            class="text-brand-white">segurança técnica.</span>
                     </h2>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-6">
                     <div class="card space-y-4 group">
-                        <h3 class="text-xl font-bold group-hover:text-brand-gold transition-colors">Foco único no mercado</h3>
-                        <p class="text-white/60 text-sm leading-relaxed">Diferente de cursos genéricos de direito aqui focamos exclusivamente na mecânica financeira e contábil das eleições.</p>
+                        <h3 class="text-xl font-bold group-hover:text-brand-gold transition-colors">Foco único no
+                            mercado</h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Diferente de cursos genéricos de direito aqui
+                            focamos exclusivamente na mecânica financeira e contábil das eleições.</p>
                     </div>
                     <div class="card space-y-4 group">
-                        <h3 class="text-xl font-bold group-hover:text-brand-gold transition-colors">100% prático e aplicável</h3>
-                        <p class="text-white/60 text-sm leading-relaxed">Metodologia baseada em casos reais e simulações nos sistemas oficiais de prestação de contas da Justiça Eleitoral.</p>
+                        <h3 class="text-xl font-bold group-hover:text-brand-gold transition-colors">100% prático e
+                            aplicável</h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Metodologia baseada em casos reais e simulações
+                            nos sistemas oficiais de prestação de contas da Justiça Eleitoral.</p>
                     </div>
                     <div class="card space-y-4 group">
-                        <h3 class="text-xl font-bold group-hover:text-brand-gold transition-colors">Corpo docente experiente</h3>
-                        <p class="text-white/60 text-sm leading-relaxed">Aprenda com quem decide: mestres doutores e profissionais com décadas de atuação prática nos tribunais.</p>
+                        <h3 class="text-xl font-bold group-hover:text-brand-gold transition-colors">Corpo docente
+                            experiente</h3>
+                        <p class="text-white/60 text-sm leading-relaxed">Aprenda com quem decide: mestres doutores e
+                            profissionais com décadas de atuação prática nos tribunais.</p>
                     </div>
                 </div>
             </div>
@@ -202,37 +356,43 @@
                     <div class="card p-8 text-left space-y-4 group">
                         <i data-lucide="banknote" class="w-5 h-5 text-brand-gold"></i>
                         <h3 class="font-bold text-lg">Arrecadação</h3>
-                        <p class="text-xs text-white/50 leading-relaxed">Técnicas seguras de captação de recursos e vaquinhas eletrônicas.</p>
+                        <p class="text-xs text-white/50 leading-relaxed">Técnicas seguras de captação de recursos e
+                            vaquinhas eletrônicas.</p>
                     </div>
                     <!-- Box 2 -->
                     <div class="card p-8 text-left space-y-4 group">
                         <i data-lucide="bar-chart-3" class="w-5 h-5 text-brand-gold"></i>
                         <h3 class="font-bold text-lg">Gestão de Gastos</h3>
-                        <p class="text-xs text-white/50 leading-relaxed">Controle rigoroso de teto de gastos e vedações legais.</p>
+                        <p class="text-xs text-white/50 leading-relaxed">Controle rigoroso de teto de gastos e vedações
+                            legais.</p>
                     </div>
                     <!-- Box 3 -->
                     <div class="card p-8 text-left space-y-4 group">
                         <i data-lucide="shield-check" class="w-5 h-5 text-brand-gold"></i>
                         <h3 class="font-bold text-lg">Prestação de Contas</h3>
-                        <p class="text-xs text-white/50 leading-relaxed">O passo a passo para aprovação total sem ressalvas.</p>
+                        <p class="text-xs text-white/50 leading-relaxed">O passo a passo para aprovação total sem
+                            ressalvas.</p>
                     </div>
                     <!-- Box 4 -->
                     <div class="card p-8 text-left space-y-4 group">
                         <i data-lucide="layout-dashboard" class="w-5 h-5 text-brand-gold"></i>
                         <h3 class="font-bold text-lg">Sistemas Oficiais</h3>
-                        <p class="text-xs text-white/50 leading-relaxed">Domínio pleno dos sistemas de prestação de contas e demais ferramentas do TSE.</p>
+                        <p class="text-xs text-white/50 leading-relaxed">Domínio pleno dos sistemas de prestação de
+                            contas e demais ferramentas do TSE.</p>
                     </div>
                     <!-- Box 5 -->
                     <div class="card p-8 text-left space-y-4 group">
                         <i data-lucide="search" class="w-5 h-5 text-brand-gold"></i>
                         <h3 class="font-bold text-lg">Conformidade</h3>
-                        <p class="text-xs text-white/50 leading-relaxed">Aplicação prática da legislação e jurisprudência atualizada.</p>
+                        <p class="text-xs text-white/50 leading-relaxed">Aplicação prática da legislação e
+                            jurisprudência atualizada.</p>
                     </div>
                     <!-- Box 6 -->
                     <div class="card p-8 text-left space-y-4 group">
                         <i data-lucide="users" class="w-5 h-5 text-brand-gold"></i>
                         <h3 class="font-bold text-lg">Gestão de Cotas</h3>
-                        <p class="text-xs text-white/50 leading-relaxed">Distribuição e aplicação de recursos para candidaturas femininas, negras e indígenas.</p>
+                        <p class="text-xs text-white/50 leading-relaxed">Distribuição e aplicação de recursos para
+                            candidaturas femininas, negras e indígenas.</p>
                     </div>
                     <!-- Box 7 -->
                     <div class="card p-8 text-left space-y-4 group">
@@ -241,14 +401,16 @@
                         <p class="text-xs text-white/50 leading-relaxed">Gestão dos fundos públicos recebidos.</p>
                     </div>
                     <!-- Box 8 - Gold -->
-                    <div class="p-8 bg-brand-gold rounded-2xl text-brand-dark flex flex-col justify-center items-center text-center space-y-2 cursor-pointer hover:scale-105 transition-transform shadow-2xl shadow-brand-gold/20">
+                    <div
+                        class="p-8 bg-brand-gold rounded-2xl text-brand-dark flex flex-col justify-center items-center text-center space-y-2 cursor-pointer hover:scale-105 transition-transform shadow-2xl shadow-brand-gold/20">
                         <span class="text-[10px] uppercase font-bold tracking-widest opacity-80">Acesso imediato</span>
                         <h3 class="text-lg font-extrabold leading-tight">Material <br> Exclusivo</h3>
                     </div>
                 </div>
 
                 <div class="pt-12">
-                    <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank" class="btn-primary px-12 py-4">
+                    <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank"
+                        class="btn-primary">
                         Garantir domínio técnico
                     </a>
                 </div>
@@ -259,28 +421,38 @@
         <section class="py-24 bg-white/[0.02]">
             <div class="section-container grid md:grid-cols-2 gap-16 items-center">
                 <div class="relative group">
-                    <div class="absolute -top-4 -left-4 w-20 h-20 border-t-2 border-l-2 border-brand-gold/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <div class="aspect-square bg-brand-card rounded-lg overflow-hidden border border-white/10 shadow-2xl">
-                        <img src="./assets/Dra%20Denise-AvWeROTd.png" alt="Dra. Denise Schlickmann" class="w-full h-full object-cover object-[center_15%] group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute -top-4 -left-4 w-20 h-20 border-t-2 border-l-2 border-brand-gold/50 opacity-0 group-hover:opacity-100 transition-opacity">
                     </div>
-                    <div class="absolute -bottom-4 -right-4 w-20 h-20 border-b-2 border-r-2 border-brand-gold/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div
+                        class="aspect-square bg-brand-card rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                        <img src="./imagens/Dra Denise.png" alt="Dra. Denise Schlickmann"
+                            class="w-full h-full object-cover object-[center_15%] group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div
+                        class="absolute -bottom-4 -right-4 w-20 h-20 border-b-2 border-r-2 border-brand-gold/50 opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
                 </div>
 
                 <div class="space-y-8">
-                    <span class="text-brand-gold font-bold uppercase tracking-widest text-xs">Corpo Docente de Elite</span>
+                    <span class="text-brand-gold font-bold uppercase tracking-widest text-xs">Corpo Docente de
+                        Elite</span>
                     <div class="space-y-4">
                         <h2 class="text-5xl font-extrabold">Dra. Denise Schlickmann</h2>
                         <p class="text-xl italic text-white/90 border-l-4 border-brand-gold pl-6 leading-relaxed">
-                            "Nossa missão é transformar a complexidade técnica em segurança contábil e jurídica para que o processo democrático seja transparente e eficiente."
+                            "Nossa missão é transformar a complexidade técnica em segurança contábil e jurídica para que
+                            o processo democrático seja transparente e eficiente."
                         </p>
                     </div>
                     <div class="space-y-4 text-white/60 leading-relaxed">
-                        <p>Doutora em Direito, é uma das maiores autoridades brasileiras em finanças partidárias e eleitorais. Com vasta experiência em Tribunais Regionais Eleitorais lidera a coordenação pedagógica desta formação.</p>
+                        <p>Doutora em Direito, é uma das maiores autoridades brasileiras em finanças partidárias e
+                            eleitorais. Com vasta experiência em Tribunais Regionais Eleitorais lidera a coordenação
+                            pedagógica desta formação.</p>
                         <ul class="space-y-2">
-                             <li class="flex items-center gap-2">
+                            <li class="flex items-center gap-2">
                                 <span class="w-1.5 h-1.5 bg-brand-gold rounded-full"></span>
                                 Autora de obras de referência no país.
-                             </li>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -290,11 +462,14 @@
         <!-- Pre-Price CTA - Section 7 -->
         <section class="py-24">
             <div class="max-w-4xl mx-auto px-6">
-                <div class="card p-8 md:p-16 text-center space-y-8 border-brand-gold/20 shadow-2xl shadow-brand-gold/5">
-                    <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">Últimas vagas para a Turma de Lançamento 2026</h2>
-                    <p class="text-white/60 text-base md:text-lg">Garanta sua vaga com condições exclusivas e bônus de mentorias coletivas durante o curso.</p>
+                <div class="card p-6 md:p-16 text-center space-y-8 border-brand-gold/20 shadow-2xl shadow-brand-gold/5">
+                    <h2 class="text-2xl md:text-5xl font-extrabold leading-tight">Últimas vagas para a Turma de
+                        Lançamento 2026</h2>
+                    <p class="text-white/60 text-base md:text-lg">Garanta sua vaga com condições exclusivas e bônus de
+                        mentorias coletivas durante o curso.</p>
                     <div class="pt-4 px-2">
-                        <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank" class="btn-primary block w-full md:inline-block md:w-auto px-4 md:px-12 py-4 md:py-5 text-base md:text-xl shadow-xl shadow-brand-gold/20 leading-tight">
+                        <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank"
+                            class="btn-primary text-base md:text-xl shadow-xl shadow-brand-gold/20 leading-tight">
                             Quero garantir minha vaga!
                         </a>
                     </div>
@@ -304,152 +479,159 @@
 
         <!-- Testimonials Section -->
         <section id="depoimentos" class="py-24 relative overflow-hidden">
-            <div class="absolute top-1/2 left-0 w-64 h-64 bg-brand-gold/5 blur-[100px] rounded-full -translate-x-1/2"></div>
-            
+            <div class="absolute top-1/2 left-0 w-64 h-64 bg-brand-gold/5 blur-[100px] rounded-full -translate-x-1/2">
+            </div>
+
             <div class="section-container space-y-16 relative z-10">
                 <div class="text-center space-y-4">
                     <span class="text-brand-gold font-bold uppercase tracking-widest text-xs">Sucesso Comprovado</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold">O que dizem nossos alunos</h2>
-                    <p class="text-white/60 max-w-2xl mx-auto">Centenas de profissionais já transformaram suas carreiras com nossa metodologia prática.</p>
+                    <h2 class="text-3xl md:text-5xl font-extrabold">O que dizem nossos alunos</h2>
+                    <p class="text-white/60 max-w-2xl mx-auto">Centenas de profissionais já transformaram suas carreiras
+                        com nossa metodologia prática.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Testimonial 1 -->
-                    <div class="card space-y-6 flex flex-col justify-between relative group">
-                        <div class="absolute -top-3 -left-3 bg-brand-gold p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg shadow-brand-gold/20">
-                            <i data-lucide="quote" class="w-4 h-4 text-brand-dark"></i>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex text-brand-gold gap-1">
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                <div class="overflow-hidden py-4 -mx-6 px-6">
+                    <div class="carousel-track gap-6">
+                        <!-- Group 1 -->
+                        <div class="flex gap-6 shrink-0">
+                            <!-- Card 1 -->
+                            <div class="card w-[320px] md:w-[450px] shrink-0 space-y-6 flex flex-col justify-between relative group">
+                                <div class="absolute -top-3 -left-3 bg-brand-gold p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg shadow-brand-gold/20">
+                                    <i data-lucide="quote" class="w-4 h-4 text-brand-dark"></i>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex text-brand-gold gap-1">
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    </div>
+                                    <p class="text-base md:text-lg italic text-white/90 leading-relaxed font-medium">"A gente conseguiu aplicar efetivamente tudo que aprendeu nas aulas"</p>
+                                </div>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold font-bold text-sm">LG</div>
+                                    <div>
+                                        <h4 class="font-bold text-white uppercase tracking-tight text-sm">LAURA GEHRKE</h4>
+                                        <p class="text-[10px] text-brand-gold uppercase tracking-widest font-bold opacity-80">CONTADORA EM SANTA CATARINA</p>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="text-lg italic text-white/90 leading-relaxed font-medium">
-                                "A gente conseguiu aplicar efetivamente tudo que aprendeu nas aulas"
-                            </p>
-                        </div>
-                        <div class="flex items-center gap-4 border-t border-white/5 pt-6">
-                            <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold font-bold text-sm">
-                                LG
+                            <!-- Card 2 -->
+                            <div class="card w-[320px] md:w-[450px] shrink-0 space-y-6 flex flex-col justify-between relative group">
+                                <div class="absolute -top-3 -left-3 bg-brand-gold p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg shadow-brand-gold/20">
+                                    <i data-lucide="quote" class="w-4 h-4 text-brand-dark"></i>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex text-brand-gold gap-1">
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    </div>
+                                    <p class="text-base md:text-lg italic text-white/90 leading-relaxed font-medium">"Devo muito do meu desenvolvimento aos professores que atuam na área há muito tempo."</p>
+                                </div>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold font-bold text-sm">JC</div>
+                                    <div>
+                                        <h4 class="font-bold text-white uppercase tracking-tight text-sm">JONATHAS DE CARVALHO</h4>
+                                        <p class="text-[10px] text-brand-gold uppercase tracking-widest font-bold opacity-80">Servidor do TRE do Acre</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <h4 class="font-bold text-white uppercase tracking-tight text-sm">LAURA GEHRKE</h4>
-                                <p class="text-[10px] text-brand-gold uppercase tracking-widest font-bold opacity-80">CONTADORA EM SANTA CATARINA</p>
+                            <!-- Card 3 -->
+                            <div class="card w-[320px] md:w-[450px] shrink-0 space-y-6 flex flex-col justify-between relative group">
+                                <div class="absolute -top-3 -left-3 bg-brand-gold p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg shadow-brand-gold/20">
+                                    <i data-lucide="quote" class="w-4 h-4 text-brand-dark"></i>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex text-brand-gold gap-1">
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    </div>
+                                    <p class="text-base md:text-lg italic text-white/90 leading-relaxed font-medium">"Você irá se tornar um profissional de elite nesse segmento"</p>
+                                </div>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold font-bold text-sm">GL</div>
+                                    <div>
+                                        <h4 class="font-bold text-white uppercase tracking-tight text-sm">GILBERTO DE LOYOLA JUNIOR</h4>
+                                        <p class="text-[10px] text-brand-gold uppercase tracking-widest font-bold opacity-80">Diretor Financeiro do MDB NACIONAL</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Testimonial 2 -->
-                    <div class="card space-y-6 flex flex-col justify-between relative group">
-                        <div class="absolute -top-3 -left-3 bg-brand-gold p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg shadow-brand-gold/20">
-                            <i data-lucide="quote" class="w-4 h-4 text-brand-dark"></i>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex text-brand-gold gap-1">
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                        <!-- Group 2 (Duplicate for loop) -->
+                        <div class="flex gap-6 shrink-0" aria-hidden="true">
+                            <div class="card w-[320px] md:w-[450px] shrink-0 space-y-6 flex flex-col justify-between relative group">
+                                <div class="absolute -top-3 -left-3 bg-brand-gold p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg shadow-brand-gold/20">
+                                    <i data-lucide="quote" class="w-4 h-4 text-brand-dark"></i>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex text-brand-gold gap-1">
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    </div>
+                                    <p class="text-base md:text-lg italic text-white/90 leading-relaxed font-medium">"A gente conseguiu aplicar efetivamente tudo que aprendeu nas aulas"</p>
+                                </div>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold font-bold text-sm">LG</div>
+                                    <div>
+                                        <h4 class="font-bold text-white uppercase tracking-tight text-sm">LAURA GEHRKE</h4>
+                                        <p class="text-[10px] text-brand-gold uppercase tracking-widest font-bold opacity-80">CONTADORA EM SANTA CATARINA</p>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="text-lg italic text-white/90 leading-relaxed font-medium">
-                                "Devo muito do meu desenvolvimento aos professores que atuam na área há muito tempo."
-                            </p>
-                        </div>
-                        <div class="flex items-center gap-4 border-t border-white/5 pt-6">
-                            <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold font-bold text-sm">
-                                JC
+                            <div class="card w-[320px] md:w-[450px] shrink-0 space-y-6 flex flex-col justify-between relative group">
+                                <div class="absolute -top-3 -left-3 bg-brand-gold p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg shadow-brand-gold/20">
+                                    <i data-lucide="quote" class="w-4 h-4 text-brand-dark"></i>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex text-brand-gold gap-1">
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    </div>
+                                    <p class="text-base md:text-lg italic text-white/90 leading-relaxed font-medium">"Devo muito do meu desenvolvimento aos professores que atuam na área há muito tempo."</p>
+                                </div>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold font-bold text-sm">JC</div>
+                                    <div>
+                                        <h4 class="font-bold text-white uppercase tracking-tight text-sm">JONATHAS DE CARVALHO</h4>
+                                        <p class="text-[10px] text-brand-gold uppercase tracking-widest font-bold opacity-80">Servidor do TRE do Acre</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <h4 class="font-bold text-white uppercase tracking-tight text-sm">JONATHAS DE CARVALHO</h4>
-                                <p class="text-[10px] text-brand-gold uppercase tracking-widest font-bold opacity-80">Servidor do TRE do Acre</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="card space-y-6 flex flex-col justify-between relative group">
-                        <div class="absolute -top-3 -left-3 bg-brand-gold p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg shadow-brand-gold/20">
-                            <i data-lucide="quote" class="w-4 h-4 text-brand-dark"></i>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex text-brand-gold gap-1">
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                            </div>
-                            <p class="text-lg italic text-white/90 leading-relaxed font-medium">
-                                "Você irá se tornar um profissional de elite nesse segmento"
-                            </p>
-                        </div>
-                        <div class="flex items-center gap-4 border-t border-white/5 pt-6">
-                            <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold font-bold text-sm">
-                                GL
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white uppercase tracking-tight text-sm text-balance">GILBERTO DE LOYOLA JUNIOR</h4>
-                                <p class="text-[10px] text-brand-gold uppercase tracking-widest font-bold opacity-80">Diretor Financeiro do MDB NACIONAL</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 4 -->
-                    <div class="card space-y-6 flex flex-col justify-between relative group">
-                        <div class="absolute -top-3 -left-3 bg-brand-gold p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg shadow-brand-gold/20">
-                            <i data-lucide="quote" class="w-4 h-4 text-brand-dark"></i>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex text-brand-gold gap-1">
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                            </div>
-                            <p class="text-lg italic text-white/90 leading-relaxed font-medium">
-                                "Os professores são muito didáticos e conseguimos colocar em prática no nosso dia a dia"
-                            </p>
-                        </div>
-                        <div class="flex items-center gap-4 border-t border-white/5 pt-6">
-                            <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold font-bold text-sm">
-                                MB
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white uppercase tracking-tight text-sm">MORGANA BRUM</h4>
-                                <p class="text-[10px] text-brand-gold uppercase tracking-widest font-bold opacity-80">Contadora e consultora eleitoral</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Testimonial 5 -->
-                    <div class="card space-y-6 flex flex-col justify-between relative group">
-                        <div class="absolute -top-3 -left-3 bg-brand-gold p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg shadow-brand-gold/20">
-                            <i data-lucide="quote" class="w-4 h-4 text-brand-dark"></i>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex text-brand-gold gap-1">
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
-                            </div>
-                            <p class="text-lg italic text-white/90 leading-relaxed font-medium">
-                                "É imensurável a gratidão pelo vasto conhecimento que foi possível obter"
-                            </p>
-                        </div>
-                        <div class="flex items-center gap-4 border-t border-white/5 pt-6">
-                            <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold font-bold text-sm">
-                                SR
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white uppercase tracking-tight text-sm">SHALANNA RAGEL</h4>
-                                <p class="text-[10px] text-brand-gold uppercase tracking-widest font-bold opacity-80">Contadora eleitoral</p>
+                            <div class="card w-[320px] md:w-[450px] shrink-0 space-y-6 flex flex-col justify-between relative group">
+                                <div class="absolute -top-3 -left-3 bg-brand-gold p-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg shadow-brand-gold/20">
+                                    <i data-lucide="quote" class="w-4 h-4 text-brand-dark"></i>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex text-brand-gold gap-1">
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                        <i data-lucide="star" class="w-4 h-4 fill-brand-gold"></i>
+                                    </div>
+                                    <p class="text-base md:text-lg italic text-white/90 leading-relaxed font-medium">"Você irá se tornar um profissional de elite nesse segmento"</p>
+                                </div>
+                                <div class="flex items-center gap-4 border-t border-white/5 pt-6">
+                                    <div class="w-10 h-10 rounded-full bg-brand-gold/10 flex items-center justify-center text-brand-gold font-bold text-sm">GL</div>
+                                    <div>
+                                        <h4 class="font-bold text-white uppercase tracking-tight text-sm">GILBERTO DE LOYOLA JUNIOR</h4>
+                                        <p class="text-[10px] text-brand-gold uppercase tracking-widest font-bold opacity-80">Diretor Financeiro do MDB NACIONAL</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -457,56 +639,142 @@
             </div>
         </section>
 
+        <!-- Conversion Section (Oferta) -->
+        <section id="oferta" class="py-6 relative overflow-hidden">
+            <!-- Background Glow -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-gold/5 blur-[120px] rounded-full pointer-events-none">
+            </div>
+
+            <div class="section-container !py-8 relative z-10 flex justify-center">
+                <!-- Glassmorphism Card -->
+                <div
+                    class="w-full max-w-2xl bg-white/[0.03] backdrop-blur-2xl border border-brand-gold/30 rounded-[32px] p-6 md:p-16 text-center space-y-8 md:space-y-10 shadow-2xl relative overflow-hidden">
+
+                    <!-- Header -->
+                    <div class="space-y-2">
+                        <p class="text-[10px] md:text-xs font-light tracking-[0.3em] text-white/80 uppercase">CONDIÇÃO
+                            EXCLUSIVA: GARANTA SUA VAGA NO LOTE 1</p>
+                        <div class="w-12 h-[1px] bg-brand-gold/50 mx-auto mt-4"></div>
+                    </div>
+
+                    <!-- Timer -->
+                    <div class="space-y-4">
+                        <div id="countdown"
+                            class="text-4xl md:text-6xl font-mono font-medium text-brand-gold tracking-tighter flex justify-center items-center gap-4">
+                            <span>02</span>
+                            <span class="text-white/20 text-3xl md:text-5xl">:</span>
+                            <span>14</span>
+                            <span class="text-white/20 text-3xl md:text-5xl">:</span>
+                            <span>35</span>
+                        </div>
+                        <div
+                            class="flex justify-center gap-8 md:gap-12 text-[9px] md:text-[10px] font-bold tracking-widest text-white/40 uppercase">
+                            <span>Horas</span>
+                            <span>Minutos</span>
+                            <span>Segundos</span>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Area -->
+                    <div class="space-y-6 py-4">
+                        <div class="space-y-1">
+                            <p class="text-white/40 text-sm line-through decoration-brand-gold/40">De R$ 4.997,00</p>
+                            <p class="text-3xl md:text-6xl font-black text-brand-gold">
+                                <span class="text-lg md:text-2xl font-light">Por</span> R$ 3.790,00
+                            </p>
+                        </div>
+                        
+                        <p class="text-sm font-medium text-white/70 tracking-wide uppercase">Ou em até <span class="text-white">10x de R$ 379,00</span> no cartão</p>
+
+                        <!-- Badge -->
+                        <div
+                            class="inline-flex items-center gap-2 border border-brand-gold/30 px-4 py-2 rounded-full animate-glow">
+                            <i data-lucide="star" class="w-4 h-4 text-brand-gold fill-brand-gold"></i>
+                            <span class="text-[10px] font-bold tracking-widest text-brand-gold uppercase">Desconto
+                                Especial de Lançamento</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="pt-4">
+                        <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank"
+                            class="btn-primary text-lg md:text-xl py-6 rounded-2xl shadow-[0_0_30px_rgba(206,161,98,0.2)] !bg-brand-gold active:scale-95 transition-all text-white font-extrabold uppercase">
+                            INSCREVER-SE AGORA
+                        </a>
+                    </div>
+
+                    <!-- Footer Note -->
+                    <p class="text-[10px] text-white/30 italic">
+                        *Valor promocional garantido até o final do cronômetro.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- FAQ Section - Section 8 -->
-        <section id="faq" class="py-24 bg-white/[0.01]">
+        <section id="faq" class="py-12 bg-white/[0.01]">
             <div class="max-w-3xl mx-auto px-6 space-y-12">
                 <h2 class="text-4xl font-extrabold text-center">Perguntas frequentes</h2>
-                
+
                 <div class="space-y-4">
-                    <details class="group bg-brand-card border border-white/5 rounded-xl overflow-hidden cursor-pointer">
+                    <details
+                        class="group bg-brand-card border border-white/5 rounded-xl overflow-hidden cursor-pointer">
                         <summary class="flex justify-between items-center p-6 text-lg font-semibold list-none">
                             O curso é reconhecido pelo MEC?
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
                         </summary>
                         <div class="px-6 pb-6 text-white/50 text-sm leading-relaxed">
-                            Sim, o curso é uma pós-graduação lato sensu totalmente regularizada e reconhecida pelo MEC através de instituições parceiras de excelência.
+                            Sim, o curso é uma pós-graduação lato sensu totalmente regularizada e reconhecida pelo MEC
+                            através de instituições parceiras de excelência.
                         </div>
                     </details>
-                    
-                    <details class="group bg-brand-card border border-white/5 rounded-xl overflow-hidden cursor-pointer">
+
+                    <details
+                        class="group bg-brand-card border border-white/5 rounded-xl overflow-hidden cursor-pointer">
                         <summary class="flex justify-between items-center p-6 text-lg font-semibold list-none">
                             Preciso ser advogado para fazer o curso?
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
                         </summary>
                         <div class="px-6 pb-6 text-white/50 text-sm leading-relaxed">
-                            Não. O curso é aberto a qualquer profissional graduado que tenha interesse em atuar no mercado eleitoral, especialmente contadores, gestores públicos e dirigentes partidários.
+                            Não. O curso é aberto a qualquer profissional graduado que tenha interesse em atuar no
+                            mercado eleitoral, especialmente contadores, gestores públicos e dirigentes partidários.
                         </div>
                     </details>
 
-                    <details class="group bg-brand-card border border-white/5 rounded-xl overflow-hidden cursor-pointer">
+                    <details
+                        class="group bg-brand-card border border-white/5 rounded-xl overflow-hidden cursor-pointer">
                         <summary class="flex justify-between items-center p-6 text-lg font-semibold list-none">
                             As aulas são ao vivo ou gravadas?
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
                         </summary>
                         <div class="px-6 pb-6 text-white/50 text-sm leading-relaxed">
-                            O curso combina aulas gravadas para facilitar o seu ritmo com mentorias coletivas ao vivo para resolução de dúvidas e casos práticos.
+                            O curso combina aulas gravadas para facilitar o seu ritmo com mentorias coletivas ao vivo
+                            para resolução de dúvidas e casos práticos.
                         </div>
                     </details>
 
-                    <details class="group bg-brand-card border border-white/5 rounded-xl overflow-hidden cursor-pointer">
+                    <details
+                        class="group bg-brand-card border border-white/5 rounded-xl overflow-hidden cursor-pointer">
                         <summary class="flex justify-between items-center p-6 text-lg font-semibold list-none">
                             Qual o tempo de duração da formação?
-                            <i data-lucide="chevron-down" class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
+                            <i data-lucide="chevron-down"
+                                class="w-5 h-5 group-open:rotate-180 transition-transform"></i>
                         </summary>
                         <div class="px-6 pb-6 text-white/50 text-sm leading-relaxed">
-                            A carga horária completa é de 360 horas, podendo ser concluída em aproximadamente 4 meses de estudo intensivo.
+                            A carga horária completa é de 360 horas, podendo ser concluída em aproximadamente 4 meses de
+                            estudo intensivo.
                         </div>
                     </details>
                 </div>
 
-                <div class="pt-8 text-center">
-                    <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank" class="btn-primary px-12 py-4">
-                        Ficou alguma dúvida? Matricule-se e fale conosco!
+                <div class="pt-8 text-center px-4">
+                    <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank"
+                        class="btn-primary">
+                        Tem alguma dúvida? Fale conosco!
                     </a>
                 </div>
             </div>
@@ -518,20 +786,23 @@
                 <h2 class="text-4xl md:text-6xl font-extrabold max-w-5xl mx-auto leading-tight">
                     Domine a engrenagem financeira das eleições com quem entende do assunto.
                 </h2>
-                
+
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-12 py-4">
                     <div class="flex items-center gap-3">
                         <i data-lucide="shield-check" class="w-5 h-5 text-brand-gold"></i>
-                        <span class="text-xs font-bold tracking-widest uppercase opacity-80">Reconhecimento pelo MEC</span>
+                        <span class="text-xs font-bold tracking-widest uppercase opacity-80">Reconhecimento pelo
+                            MEC</span>
                     </div>
                     <div class="flex items-center gap-3">
                         <i data-lucide="graduation-cap" class="w-5 h-5 text-brand-gold"></i>
-                        <span class="text-xs font-bold tracking-widest uppercase opacity-80">Doutores, mestres e especialistas</span>
+                        <span class="text-xs font-bold tracking-widest uppercase opacity-80">Doutores, mestres e
+                            especialistas</span>
                     </div>
                 </div>
 
-                <div class="pt-8">
-                    <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank" class="btn-primary text-lg px-20 py-5 mx-auto">
+                <div class="pt-8 text-center text-white">
+                    <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank"
+                        class="btn-primary text-lg">
                         Matricule-se agora!
                     </a>
                 </div>
@@ -543,12 +814,105 @@
     <!-- Footer -->
     <footer class="py-12 border-t border-white/5 bg-black/40">
         <div class="section-container flex flex-col items-center gap-8">
-            <div class="flex items-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100">
-                <img src="./assets/Logo%20instituto%20saber%20digital-DuDdyVCK.jpeg" alt="Logo Instituto Saber Digital" class="h-8 rounded-sm">
+            <div
+                class="flex items-center grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100">
+                <img src="./imagens/Logo instituto saber digital.jpeg" alt="Logo Instituto Saber Digital"
+                    class="h-8 rounded-sm">
             </div>
             <p class="text-white/30 text-xs tracking-widest">© 2026 Instituto Saber Digital</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        /**
+         * ANIMATIONS LOGIC
+         */
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealOnScroll.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const elementsToAnimate = [
+            'section h1',
+            'section h2',
+            'p',
+            '.card',
+            '.btn-primary',
+            '.grid > div',
+            'header'
+        ];
+
+        document.querySelectorAll(elementsToAnimate.join(',')).forEach(el => {
+            el.classList.add('reveal-element');
+            revealOnScroll.observe(el);
+        });
+
+        document.querySelectorAll('.grid').forEach(grid => {
+            Array.from(grid.children).forEach((child, index) => {
+                child.style.transitionDelay = `${index * 0.1}s`;
+            });
+        });
+
+        /**
+         * HEADER SCROLL LOGIC
+         */
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-brand-dark/95', 'py-3');
+                header.classList.remove('bg-brand-dark/80', 'py-4');
+            } else {
+                header.classList.add('bg-brand-dark/80', 'py-4');
+                header.classList.remove('bg-brand-dark/95', 'py-3');
+            }
+        });
+
+        /**
+         * COUNTDOWN TIMER LOGIC
+         */
+        function startCountdown() {
+            let hours = 2, minutes = 14, seconds = 35;
+            const hDisplay = document.querySelector('#countdown span:nth-child(1)');
+            const mDisplay = document.querySelector('#countdown span:nth-child(3)');
+            const sDisplay = document.querySelector('#countdown span:nth-child(5)');
+
+            const timer = setInterval(() => {
+                if (seconds > 0) {
+                    seconds--;
+                } else if (minutes > 0) {
+                    minutes--;
+                    seconds = 59;
+                } else if (hours > 0) {
+                    hours--;
+                    minutes = 59;
+                    seconds = 59;
+                }
+
+                hDisplay.textContent = String(hours).padStart(2, '0');
+                mDisplay.textContent = String(minutes).padStart(2, '0');
+                sDisplay.textContent = String(seconds).padStart(2, '0');
+
+                if (hours === 0 && minutes === 0 && seconds === 0) {
+                    clearInterval(timer);
+                }
+            }, 1000);
+        }
+
+        window.addEventListener('load', startCountdown);
+    </script>
 </body>
+
 </html>
