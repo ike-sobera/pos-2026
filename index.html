@@ -163,12 +163,34 @@
                     class="btn-secondary">Matricule-se agora!</a>
             </div>
 
-            <!-- Mobile toggle placeholder -->
-            <div class="md:hidden">
-                <i data-lucide="menu" class="w-6 h-6 text-brand-gold"></i>
-            </div>
+            <!-- Mobile toggle -->
+            <button id="menu-open" class="md:hidden p-2 text-brand-gold hover:bg-white/5 rounded-lg transition-colors">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay (Moved outside header for z-index/opacity reliability) -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[100] translate-x-full transition-transform duration-500 md:hidden flex flex-col items-center justify-start pt-32 space-y-12 p-10"
+        style="background-color: #080C12;">
+        <button id="menu-close" class="absolute top-6 right-6 p-2 text-brand-gold hover:bg-white/5 rounded-lg">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+
+        <nav class="flex flex-col items-center gap-10 text-xl font-bold tracking-[0.3em] uppercase">
+            <a href="#programa" class="mobile-link hover:text-brand-gold transition-colors">Programa</a>
+            <a href="#diferenciais" class="mobile-link hover:text-brand-gold transition-colors">Diferenciais</a>
+            <a href="#faq" class="mobile-link hover:text-brand-gold transition-colors">FAQ</a>
+        </nav>
+
+        <div class="w-full pt-10 flex justify-center">
+            <a href="https://saberdigital.site.engaged.com.br/p/checkout/58n5d65unc" target="_blank"
+                class="btn-primary">Matricule-se agora!</a>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main class="pt-32 md:pt-40 overflow-x-hidden">
@@ -910,6 +932,25 @@
                 }
             }, 1000);
         }
+
+        /**
+         * MOBILE MENU LOGIC
+         */
+        const menuOpen = document.getElementById('menu-open');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        menuOpen.addEventListener('click', toggleMenu);
+        menuClose.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
 
         window.addEventListener('load', startCountdown);
     </script>
